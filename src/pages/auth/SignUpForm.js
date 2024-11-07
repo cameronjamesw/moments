@@ -68,6 +68,7 @@ const SignUpForm = () => {
                                 {message}
                             </Alert>
                         ))}
+                        <br/>
 
                         <Form.Group controlId="password1">
                             <Form.Label className="d-none">Password</Form.Label>
@@ -85,6 +86,7 @@ const SignUpForm = () => {
                                 {message}
                             </Alert>
                         ))}
+                        <br/>
 
                         <Form.Group controlId="password2">
                             <Form.Label className="d-none">Confirm password</Form.Label>
@@ -102,6 +104,7 @@ const SignUpForm = () => {
                                 {message}
                             </Alert>
                         ))}
+                        <br/>
 
                         <Button
                             className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
