@@ -28,17 +28,17 @@ function SignInForm() {
 
     const [errors, setErrors] = useState({});
 
-    
+
     const history = useHistory();
 
     const handleChange = (event) => {
         setSignInData({
             ...signInData,
             [event.target.name]: event.target.value
-        })
+        });
     };
 
-    const handleSubmt = async (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         try {
             await axios.post('/dj-rest-auth/login/', signInData);
@@ -54,7 +54,7 @@ function SignInForm() {
             <Col className="my-auto p-0 p-md-2" md={6}>
                 <Container className={`${appStyles.Content} p-4 `}>
                     <h1 className={styles.Header}>sign in</h1>
-                    {<Form onSubmit={handleSubmt}>
+                    {<Form onSubmit={handleSubmit}>
                         <Form.Group controlId="username">
                             <Form.Label className="d-none">Username</Form.Label>
                             <Form.Control
@@ -65,10 +65,11 @@ function SignInForm() {
                                 value={username}
                                 onChange={handleChange} />
                         </Form.Group>
-                        {errors.username?.map((message, idx) => {
-                            <Alert variant="warning" key={idx}>
-                                {message}</Alert>
-                        })}
+                        {errors.username?.map((message, idx) => (
+                            <Alert key={idx} variant="warning">
+                                {message}
+                            </Alert>
+                        ))}
                         <br />
 
                         <Form.Group controlId="password">
@@ -81,10 +82,11 @@ function SignInForm() {
                                 value={password}
                                 onChange={handleChange} />
                         </Form.Group>
-                        {errors.password?.map((message, idx) => {
-                            <Alert variant="warning" key={idx}>
-                                {message}</Alert>
-                        })}
+                        {errors.password?.map((message, idx) => (
+                            <Alert key={idx} variant="warning">
+                                {message}
+                            </Alert>
+                        ))}
                         <br />
 
                         <Button
