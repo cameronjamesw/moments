@@ -17,7 +17,7 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
 import { useHistory } from "react-router";
-import { axiosReq } from "../../api/axiosDefaults";
+import { axiosReq } from "../../api/axiosDefaults"
 
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
