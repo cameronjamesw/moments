@@ -21,9 +21,9 @@ function PostsPage({message, filter=""}) {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const {data} = await axiosReq.get(`/posts/?${filter}`)
-                setPosts(data)
-                setHasLoaded(true)
+                const {data} = await axiosReq.get(`/posts/?${filter}`);
+                setPosts(data);
+                setHasLoaded(true);
             } catch (err) {
                 console.log(err)
             }
@@ -39,9 +39,9 @@ function PostsPage({message, filter=""}) {
                 { hasLoaded ? (
                     <>
                     {posts.results.length ? (
-                        posts.results.map((post) => {
+                        posts.results.map((post) => (
                             < Post key={post.id} {...post} setPosts={setPosts} />
-                        })
+                        ))
                     ) : (
                         <Container className={appStyles.Content}>
                             <Asset src={NoResults} message={message}/>
