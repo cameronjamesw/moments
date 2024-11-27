@@ -21,24 +21,26 @@ const PopularProfiles = () => {
                 const { data } = await axiosReq.get(
                     "/profiles/?ordering=-followers_count"
                 );
-                setProfileData(prevState => ({
+                setProfileData((prevState) => ({
                     ...prevState,
                     popularProfiles: data,
-                }))
+                }));
             } catch (err) {
                 console.log(err)
             }
-        }
+        };
+
         handleMount();
     }, [currentUser]);
+
   return (
     <Container className={appStyles.Content}>
         {popularProfiles.results.length ? (
             <>
              <p>Most followed profiles.</p>
-        {popularProfiles.results.map((profile) => {
+        {popularProfiles.results.map((profile) => (
             <p key={profile.id}>{profile.owner}</p>
-        })}
+        ))}
             </>
         ) : (
             <Asset spinner/>
