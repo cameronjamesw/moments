@@ -12,6 +12,7 @@ import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults"
+import PopularProfiles from "../profiles/PopularProfiles";
 
 function PostsPage({ message, filter = "" }) {
     const [posts, setPosts] = useState({ results: [] });
@@ -74,7 +75,7 @@ function PostsPage({ message, filter = "" }) {
                 )}
             </Col>
             <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-                <p>Popular profiles for desktop</p>
+                <PopularProfiles/>
             </Col>
         </Row>
     );
