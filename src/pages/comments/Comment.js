@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../../styles/Comment.module.css'
 import Avatar from '../../components/Avatar'
-import { Media } from 'react-bootstrap'
+import Media  from 'react-bootstrap/Media'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 import { MoreDropdown } from '../../components/MoreDropdown'
 import { useCurrentUser } from '../../contexts/CurrentUserContexts'
@@ -41,7 +41,6 @@ const Comment = (props) => {
                 results: prevComments.results.filter((comment) => comment.id !== id),
             }))
         } catch (err) {
-            console.log(err)
         }
     }
 
